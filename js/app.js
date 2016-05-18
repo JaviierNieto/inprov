@@ -1,4 +1,4 @@
-var app = angular.module("inprovec",['ngMaterial', 'ui.router', 'ngResource']);
+var app = angular.module("inprovec",['ngMaterial', 'ui.router', 'ngResource', 'md.data.table']);
 
 
 app.config(function($mdThemingProvider) {
@@ -7,4 +7,15 @@ app.config(function($mdThemingProvider) {
         .accentPalette('blue')
         .warnPalette('deep-orange')
         .backgroundPalette('grey');
+});
+
+app.config(function($stateProvider, $urlRouterProvider, $interpolateProvider, $locationProvider) {
+    $urlRouterProvider.otherwise("/");
+    $stateProvider
+        .state('vendedor_index',{
+            url: '/vendedor/',
+            templateUrl: 'templates/Vendedor/index.html',
+            controller: 'VendedorIndexCtrl'
+        })
+
 });
