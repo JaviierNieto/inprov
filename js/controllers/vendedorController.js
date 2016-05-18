@@ -1,6 +1,6 @@
 var app = angular.module('inprovec');
 
-app.controller('VendedorIndexCtrl', ['$mdEditDialog', '$q', '$scope', '$timeout','listaVendedor', function ($mdEditDialog, $q, $scope, listaVendedor) {
+app.controller('VendedorIndexCtrl', function ($mdEditDialog, $q, $scope, listaVendedor) {
 
     $scope.query = {
         order: 'name',
@@ -11,5 +11,5 @@ app.controller('VendedorIndexCtrl', ['$mdEditDialog', '$q', '$scope', '$timeout'
     $scope.vendedor = listaVendedor.query();
 
 
-}]);
+});
 
